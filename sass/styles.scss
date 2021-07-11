@@ -1,0 +1,22 @@
+$primary-color: red;
+
+::placeholder {
+  border: 1px solid black;
+}
+
+.active{
+  color: yellow;
+}
+
+.active2{
+  border: 4px solid $primary-color;
+}
+
+.active3{
+  border: 8px solid $primary-color;
+}
+
+.active4{
+  border: 22px solid $primary-color;
+  border-radius: 10px 5px;
+}

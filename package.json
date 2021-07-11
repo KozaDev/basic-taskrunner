@@ -1,0 +1,26 @@
+{
+  "name": "taskrunner",
+  "version": "1.0.0",
+  "description": "my first taskrunner",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "add:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build:sass": "node-sass --output-style compressed --source-map true  -o css sass",
+    "build:autoprefixer": "postcss css/styles.css -u autoprefixer -r",
+    "watch": "npm-run-all -p build:sass build:autoprefixer watch:* ",
+    "watch:browser-sync": "browser-sync start --server --files \"index.html\"  \"js/*.js\" \"css/*.css\" ",
+    "watch:sass": "onchange sass/styles.scss -- npm-run-all build:*"
+  },
+  "author": "Koza Dev",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "browser-sync": "^2.26.14",
+    "node-sass": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.3.2",
+    "postcss-cli": "^8.3.1"
+  }
+}
